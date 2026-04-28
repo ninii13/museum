@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+
+</style>
+<body class="kiwi-maru-regular">
+    
+    <div class="main-banner hi-melody-regular">
+        <div class="hamburger">
+            <i class="ri-menu-line"></i>
+        </div>
+        <nav class="navbar">
+            <a class="active" href="index.html">首頁</a>
+            <a href="about.html">關於我們</a>
+            <a href="knowledge.html">策展理念</a>
+            <a href="info.html">最新消息</a>
+            <a href="content.html">進入展覽</a>
+        </nav>
+        <h1>和服</h1>
+        <div class="description">
+            <p>和服是日本傳統的服裝，具有悠久的歷史和獨特的文化意義。它通常由一件長袍和一條腰帶
+               組成，並且有著華麗的圖案和鮮豔的顏色。和服不僅是一種服裝，更是一種藝術形式，
+               代表著日本的美學和文化傳承。
+               和服是日本傳統的服裝，具有悠久的歷史和獨特的文化意義。它通常由一件長袍和一條腰帶
+               組成，並且有著華麗的圖案和鮮豔的顏色。和服不僅是一種服裝，更是一種藝術形式，
+               代表著日本的美學和文化傳承。</p>
+        </div>
+        <button class="start-main"><em>Start</em></button>
+        <svg class="wave-main" viewBox="0 0 1440 120" preserveAspectRatio="none">    
+            <path d="
+                M0,60 
+                C 240,90 480,30 720,60 
+                C 960,90 1200,30 1440,60 
+                L1440,120 L0,120 Z" 
+                fill="var(--color1)"
+                transform="translate(0, 40)" />
+            </svg>
+    </div>
+    
+
+    <div class="goback">  
+        <span><a class="gobackbutton" href="index.html">首頁</a></span>
+        <span><a class="gobackbutton" href="about.html">關於我們</a></span>
+        <span><a class="gobackbutton" href="knowledge.html">策展理念</a></span>
+        <span><a class="gobackbutton" href="info.html">最新消息</a></span>
+        <span><a class="gobackbutton" href="content.html">進入展覽</a></span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+<script>
+  // 1. 註冊插件
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 2. 建立動畫
+  gsap.from(".description p", {
+    // 動態的起點狀態
+    opacity: 0,
+    y: 0,             // 從下方 30px 的位置開始
+    duration: 1.2,     // 持續 1.2 秒
+    ease: "power2.out",// 平滑的減速曲線
+    stagger: 0.3,      // 讓元素一個接一個出現（間隔 0.3 秒）
+    
+    // 設定觸發條件
+    scrollTrigger: {
+      trigger: ".description", // 當看到這個區塊時觸發
+      start: "top 50%",        // 當區塊頂部到達螢幕 80% 高度時開始
+      toggleActions: "play none none none", // 只播放一次
+      markers: false, // 顯示觸發點（開發時使用，完成後可以移除）
+    }
+  });
+  gsap.from(".start-main", {
+    scrollTrigger: {
+      trigger: ".start-main", 
+      start: "top 60%",       // 比文字稍晚一點觸發
+      markers: false,
+      toggleActions: "play none none reverse"
+    },
+    opacity: 0,
+    scale: 0.5,               // 從一半大小開始變大
+    duration: 0.8,
+    ease: "back.out(1.7)"     // 帶有一點點彈跳感的效果
+  });
+</script>
+</html>

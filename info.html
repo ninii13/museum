@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="src\icomoon\style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="knowledge.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="kiwi-maru-regular">
+    <div class="banner hi-melody-regular">
+        <div class="hamburger">
+            <i class="ri-menu-line"></i>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">首頁</a>
+            <a href="about.html">關於我們</a>
+            <a href="knowledge.html">策展理念</a>
+            <a class="active" href="info.html">最新消息</a>
+            <a href="content.html">進入展覽</a>
+        </nav>
+        <h1>最新消息</h1>
+        <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">    
+            <path d="
+                M0,60 
+                C 240,90 480,30 720,60 
+                C 960,90 1200,30 1440,60 
+                L1440,120 L0,120 Z" 
+                fill="var(--color2)" 
+                transform="translate(0, 5)" />
+            <path d="
+                M0,60 
+                C 240,90 480,30 720,60 
+                C 960,90 1200,30 1440,60 
+                L1440,120 L0,120 Z" 
+                fill="#fff"
+                transform="translate(0, 40)" />
+        </svg>
+    </div>
+    
+    <!-- <div class="daily_knowledge">
+        <div>
+            <span class="icon-bulb"></span>
+            <span style="font-size: 1.125rem;"><b>今日小知識</b></span>
+        </div>    
+        <span>狗狗的鼻紋就像人類的指紋，每一隻都獨一無二，可用來辨識身分 </span>
+    </div> -->
+    <div class="info-content">
+        <div class="titles">
+            <span class="title">狗狗常見的傳染病</span>
+            <span class="subtitle">許多狗狗傳染病治療成本高、風險大，且不一定能痊癒，預防是最關鍵的保護方式。</span>
+        </div>
+        <div class="flip-card-grid">
+            <div class="flip-card" onclick="toggleLock(this)">
+                <div class="flip-inner">
+                <div class="flip-front">
+                    <h2>犬瘟熱</h2>
+                    <p><em>常見症狀：</em></p>
+                    <p>發燒、流鼻水、抽搐、嘔吐、腹瀉、抽搐、走路不穩(神經症狀)</p>
+                </div>
+                <div class="flip-back">
+                    <h3>預防</h3>
+                    <p>定期施打 DHPP 疫苗</p>
+                    <h3>治療</h3>
+                    <p>支持性治療，無特效藥</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="toggleLock(this)">
+                <div class="flip-inner">
+                <div class="flip-front">
+                    <h2>犬小病毒</h2>
+                    <p><em>常見症狀：</em></p>
+                    <p>血便、持續嘔吐、精神不振、嚴重脫水</p>
+                </div>
+                <div class="flip-back">
+                    <h3>預防</h3>
+                    <p>完整疫苗接種</p>
+                    <h3>治療</h3>
+                    <p>住院輸液與支持性治療</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="toggleLock(this)">
+                <div class="flip-inner">
+                <div class="flip-front">
+                    <h2>心絲蟲病</h2>
+                    <p><em>常見症狀：</em></p>
+                    <p>咳嗽、運動易喘、體重減輕、體力下降、嚴重時心臟衰竭</p>
+                </div>
+                <div class="flip-back">
+                    <h3>預防</h3>
+                    <p>每月投藥預防心絲蟲</p>
+                    <h3>治療</h3>
+                    <p>注射成蟲藥物，需限制活動</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="toggleLock(this)">
+                <div class="flip-inner">
+                <div class="flip-front">
+                    <h2>狂犬病</h2>
+                    <p><em>常見症狀：</em></p>
+                    <p>行為異常、攻擊性增加、流口水、吞嚥困難、癱瘓</p>
+                </div>
+                <div class="flip-back">
+                    <h3>預防</h3>
+                    <p>定期施打狂犬病疫苗</p>
+                    <h3>治療</h3>
+                    <p>發病後無法治癒</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="goback">  
+            <span><a class="gobackbutton" href="index.html">首頁</a></span>
+            <span><a class="gobackbutton" href="adopt.html">領養資訊</a></span>
+            <span><a class="gobackbutton" href="knowledge.html">知識百科</a></span>
+            <span><a class="gobackbutton" href="vaccine_home.html">疫苗資訊</a></span>
+            <span><a class="gobackbutton" href="content.html">進入展覽</a></span>
+    </div>
+    <script src="./data/knowledges.js"></script>
+    <script type="text/javascript" src="knowledge.js"></script>
+    <script type="text/javascript" src="all.js"></script>
+</body>
+</html>
