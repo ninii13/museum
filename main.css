@@ -250,14 +250,14 @@
 }
 
 .main-banner h1{
-    font-size: 200px;
+    font-size: 6.25rem;
     font-weight: 500;
     color: white;
     letter-spacing: 0.5rem;
 }
 
 .main-banner p{
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: white;
     letter-spacing: 0.5rem;
@@ -299,7 +299,7 @@
 
 .start-main {
     padding: 0.8rem 2rem;
-    font-size: var(--fs-h1);
+    font-size: var(--fs-h2);
     color: white;
     background: none;
     border: none;
