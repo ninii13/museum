@@ -137,10 +137,11 @@
     scrollbar-width: thin;
 }
 
-.close {
+.close-btn {
     float: right;
     font-size: 1.6rem;
     cursor: pointer;
+    z-index: 1001;
 }
 
 @keyframes fadeIn {
@@ -298,6 +299,7 @@
 }
 
 .start-main {
+    text-decoration: none;
     padding: 0.8rem 2rem;
     font-size: var(--fs-h2);
     color: white;
@@ -305,7 +307,8 @@
     border: none;
     cursor: default;
     box-shadow: none;
-    display: block;          /* 讓 margin: auto 生效 */
+    display: inline-block;          
+    width: auto;
     margin: 80px auto;
 }
 
@@ -329,3 +332,4 @@
 .start-main:hover::after {
     width: 100%;
 }
+

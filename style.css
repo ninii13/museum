@@ -7,6 +7,7 @@
 
     --color1: #6C0820;
     --color2: #fee6ef;
+    --color3: #4884BA;
 
     --fs-base: clamp(14px, 1.8vw, 18px);
 
@@ -201,12 +202,12 @@ footer{
 
 .pagination .link:hover:not(.active){
     /* background-color: var(--light_yellow); */
-    color: var(--yellow);
+    color: var(--color1);
 }
 
 .pagination .active{
     /* text-align: center; */
-    background-color: var(--yellow);
+    background-color: var(--color1);
     color: white;
 }
 
@@ -221,7 +222,7 @@ footer{
 .lastPage:hover,
 .nextPage:hover{
     all: initial;
-    color: var(--yellow); 
+    color: var(--color1); 
     cursor: pointer;
     text-wrap: nowrap;
 }
@@ -273,6 +274,16 @@ select{
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+}
+.article-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.article-item:hover {
+    background-color: #f9f9f9;
 }
 
 .article{
@@ -499,3 +510,51 @@ select{
     width: 100%;
 }
 /* -----------------------Info Page Style----------------------- */
+/* -----------------------About Page Style----------------------- */
+.members {
+    margin: 20px;
+}
+.cards {
+    display: grid;
+    /* 核心：固定三欄，每欄平分空間 */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    /* 1. 調整這裡：控制卡片之間的距離 */
+    gap: 40px; 
+    
+    /* 2. 調整這裡：增加整個區塊左、右邊緣的空白 */
+    padding: 20px 10%; 
+    
+    /* 3. 調整這裡：限制整個展示區的最大寬度，避免在寬螢幕太散 */
+    max-width: 1200px;
+    margin: 0 auto; /* 讓整個 cards 區塊在網頁正中央 */
+}
+.card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box; /* 確保 padding 不會撐開寬度 */
+    text-align: center; /* 讓內部文字和圖片都置中 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.card img {
+    /* 1. 設定圖片大小（必須是正方形） */
+    width: 100px;
+    height: 100px;
+    
+    /* 2. 切成圓形 */
+    border-radius: 50%;
+    
+    /* 3. 關鍵：防止圖片變形 */
+    object-fit: cover; 
+    
+    /* 4. （選擇性）美化：加一個外框和陰影 */
+    border: 3px solid #fff; /* 白框 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 小陰影 */
+    
+    /* 5. 確保圖片本身在卡片內置中 */
+    display: block;
+    margin: 0 auto 15px auto; /* 上0、左右自動、下15px */
+}
+/* -----------------------About Page Style----------------------- */
