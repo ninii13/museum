@@ -11,6 +11,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="kiwi-maru-regular">
+        <!-- 漂浮選單 (僅保留連結變色) -->
+        <div id="floating-wrapper" class="floating-wrapper">
+            <!-- 切換按鈕 (可以換成圖示) -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="ri-history-line"></i>
+            </button>
+            <!-- 原本的選單內容 (預設隱藏) -->
+            <div id="floating-ui" class="floating-menu">
+                <ul class="era-links">
+                    <li><a href="#era-yayoi" class="nav-item">彌生時代</a></li>
+                    <li><a href="#era-nara" class="nav-item">奈良時代</a></li>
+                    <li><a href="#era-heian" class="nav-item">平安時代</a></li>
+                    <li><a href="#era-muromachi" class="nav-item">鎌倉至室町時代</a></li>
+                    <li><a href="#era-edo" class="nav-item">江戶時代</a></li>
+                    <li><a href="#era-modern" class="nav-item">明治時代至今</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="banner hi-melody-regular">
             <div class="hamburger">
                 <i class="ri-menu-line"></i>
@@ -22,7 +40,7 @@
                 <a href="info.html">最新消息</a>
                 <a class="active" href="content.html">進入展覽</a>
             </nav>
-            <h1></h1>
+            <h1>衣為心聲</h1>
             <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">    
                 <path d="
                     M0,60 
@@ -51,7 +69,7 @@
                     <span class="exhibit-title"> 史前至律令時代：原型確立與唐風影響</span>
                     <span class="exhibit-subtitle">在和服發展的初期，服飾具備強烈的實用性與身分標識功能。</span>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-yayoi">
                     <div class="exhibit-img">
                         <img src="./src/timeline/彌生時代_貫頭衣.jpg" alt="Exhibit A1">
                         <p class="img-desc">彌生時代的貫頭衣</p>
@@ -61,7 +79,7 @@
                         <p>和服最初的型態為簡單的布料組合。男性穿著一片式包裹的「卷布衣」，女性則穿著如彭丘般、將布料對折開孔套入的「貫頭衣」。此時期服飾以天然素材為主，展現了與自然共生的原始美學。</p>
                     </div>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-nara">
                     <div class="exhibit-img">
                         <img src="./src/timeline/奈良時代官方家族的代表服飾.jpg" alt="Exhibit A2">
                         <p class="img-desc">奈良時代官方家族的代表服飾</p>
@@ -85,7 +103,7 @@
                     <span class="exhibit-title">平安至室町時代：本土化美學與結構革新</span>
                     <span class="exhibit-subtitle">隨著「國風文化」興起，日本服飾擺脫唐風，走向獨特的本土化道路。</span>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-heian">
                     <div class="exhibit-img">
                         <img src="./src/timeline/平安時代-十二單.jpg" alt="Exhibit A5">
                         <p class="img-desc">平安時代-十二單</p>
@@ -95,7 +113,7 @@
                         <p>核心轉變在於「直線裁」技術的成熟。這種剪裁法不強調人體曲線，反而創造出寬大舒緩的廓形。貴族女性發展出由多層絲綢堆疊的「十二單」，透過「襲色目」展現穿著者的品味與對季節變化的敏銳度。</p>
                     </div>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-muromachi">
                     <div class="exhibit-img">
                         <img src="./src/timeline/鎌倉時代武士家族代表服飾.jpg" alt="Exhibit A6">
                         <p class="img-desc">鎌倉時代武士家族代表服飾</p>
@@ -114,7 +132,7 @@
                     <span class="exhibit-title">江戶時代：庶民美學與規範下的藝術</span>
                     <span class="exhibit-subtitle">江戶時代是和服裝飾藝術的顛峰。隨著商業經濟繁榮，町人（平民）階級崛起。</span>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-edo">
                     <div class="exhibit-img">
                         <img src="./src/timeline/江戶時代武士家族代表服飾.jpg" alt="Exhibit A7">
                         <p class="img-desc">江戶時代武士家族代表服飾</p>
@@ -134,7 +152,7 @@
                     <span class="exhibit-title">明治時代至今：從日常到文化的象徵</span>
                     <span class="exhibit-subtitle">近代以來，和服經歷了功能上的劇烈轉向。</span>
                 </div>
-                <div class="exhibit-item">
+                <div class="exhibit-item" id="era-meiji">
                     <div class="exhibit-img">
                         <img src="./src/timeline/婚禮和服.jpg" alt="Exhibit A7">
                         <p class="img-desc">婚禮和服</p>
@@ -160,6 +178,30 @@
         </div>
     </body>
     <script>
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            const wrapper = document.getElementById('floating-wrapper');
+            const toggleBtn = document.getElementById('menu-toggle');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            // 1. 點擊按鈕切換選單
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // 防止點擊事件冒泡
+                wrapper.classList.toggle('show-menu');
+            });
+
+            // 2. 點擊選單內的連結後，自動關閉選單
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    wrapper.classList.remove('show-menu');
+                });
+            });
+
+            // 3. 點擊頁面其他地方時，關閉選單 (UX 優化)
+            document.addEventListener('click', function(e) {
+                if (!wrapper.contains(e.target)) {
+                    wrapper.classList.remove('show-menu');
+                }
+            });
+        });
     </script>
 </html>

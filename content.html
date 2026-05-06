@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>衣為心聲-進入展覽</title>
 </head>
 <body class="kiwi-maru-regular">
     <div class="banner hi-melody-regular">
@@ -40,14 +42,13 @@
         </svg>
     </div>
     <div class="titles">
-            <span class="title">最新的活動、公告都在這裡！</span>
-            <span class="subtitle">一起學更多照顧毛孩的小知識吧！ </span>
+            <span class="title">引導標題</span>
+            <span class="subtitle">引導副標題</span>
     </div>
     <div class="kimono-main">
         <div class="block" id="blockA"><a href="zoneA.html">和服發展之時間線</a></div>
-        <div class="block" id="blockB"><a href="zoneB.html">江戶時期未婚女性之服飾</a></div>
-        <div class="block" id="blockC"><a href="zoneC.html">平民階級女性之服飾（町人妻與商人家族）</a></div>
-        <div class="block" id="blockD"><a href="zoneD.html">江戶時代後之現代發展</a></div>
+        <div class="block" id="blockB"><a href="zoneB.html">江戶時期:身分限制下的時尚追求</a></div>
+        <div class="block" id="blockC"><a href="zoneC.html">江戶時代後之現代發展</a></div>
     </div>
 
     <div class="goback">  
@@ -58,4 +59,14 @@
             <span><a class="gobackbutton" href="contact.html">聯絡我們</a></span>
     </div>
 </body>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+  var flkty = new Flickity('.kimono-main', {
+    // 選項
+    cellAlign: 'center',
+    contain: true,
+    wrapAround: true,  // 循環播放
+    autoPlay: 3000     // 3秒自動切換
+  });
+</script>
 </html>
