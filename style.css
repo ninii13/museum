@@ -50,6 +50,7 @@ body{
     color: var(--primary-color);
     margin: 0;
     padding: 0;
+    background-color: whitesmoke;
 }
 
 p, span {
@@ -59,7 +60,7 @@ p, span {
 .banner{
     width: 100vw;
     height: 70vh;
-    background-image: radial-gradient(circle at center, #18191d00, #18191db3), url("./src/main.jpg");
+    background-image: radial-gradient(circle at center, #18191d00, #18191db3), url("./src/info.jpg");
     background-position: 50% 35%;
     background-size: cover;
     position: relative;
@@ -558,3 +559,90 @@ select{
     margin: 0 auto 15px auto; /* 上0、左右自動、下15px */
 }
 /* -----------------------About Page Style----------------------- */
+/* -----------------------Content Page Style----------------------- */
+.kimono-main {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding:0px;
+    margin: 20px;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 10px;
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    color: white;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.12) ;
+    -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.12) ;
+    -moz-box-shadow: 1px 1px 2px 2px rgba(71, 46, 8, 0.12) ;
+}
+
+
+.kimono-main a{
+    text-decoration: none;
+    color: white;
+}
+
+#blockA{
+    background-image: radial-gradient(circle at center, #18191d00, #18191db3),url("./src/timeline/參加畢業典禮和服.jpg");
+    background-size: cover;    /* Fills the block */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.block:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* -----------------------Content Page Style----------------------- */
+/* -----------------------Zone A Page Style----------------------- */
+.top-title {
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+}
+.exhibit-subtitle {
+    margin-bottom: 20px;
+}
+.exhibit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+.exhibit:nth-child(even) {
+    background: white;
+}
+.exhibit-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+}
+
+.exhibit-item img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exhibit-desc .exhibit-title{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+/* -----------------------Zone A Page Style----------------------- */
