@@ -660,7 +660,7 @@ select{
     background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 #blockB {
-    background-image: radial-gradient(circle at center, #18191d00, #18191db3), url("./src/content2.jpg");
+    background-image: radial-gradient(circle at center, #18191d00, #18191db3), url("./src/content2.JPG");
     background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 #blockC {
