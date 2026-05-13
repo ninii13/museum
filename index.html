@@ -9,7 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>衣為心聲</title>
+    <script src="theme.js"></script>
+    <script>
+        // 放在 head：在網頁畫出來前先套用顏色，防止閃爍
+        const savedColor = localStorage.getItem('kimonoThemeColor');
+        if (savedColor) {
+            document.documentElement.style.setProperty('--color1', savedColor);
+        }
+    </script>
 </head>
+
 
 <style>
 
@@ -17,6 +26,14 @@
 <body class="kiwi-maru-regular">
     
     <div class="main-banner hi-melody-regular">
+      <!-- <div class="theme-switcher">
+    <p>和服色彩體驗</p>
+    <div class="color-options">
+        <div class="color-btn" style="background-color: #6C0820;" onclick="changeThemeColor('#6C0820')"></div>
+        <div class="color-btn" style="background-color: #4A6935;" onclick="changeThemeColor('#4A6935')"></div>
+        <div class="color-btn" style="background-color: #3F5671;" onclick="changeThemeColor('#3F5671')"></div>
+    </div>
+</div> -->
         <div class="hamburger">
             <i class="ri-menu-line"></i>
         </div>
@@ -92,5 +109,13 @@
     duration: 0.8,
     ease: "back.out(1.7)"     // 帶有一點點彈跳感的效果
   });
+  
+  // 3. 切換顏色的函數（這裡的名字要跟 onclick 裡面的一模一樣）
+  function changeThemeColor(color) {
+      // 立即改變畫面上所有的 --color1 變數
+      document.documentElement.style.setProperty('--color1', color);
+      // 存入瀏覽器紀錄，讓其他分頁也能讀取
+      localStorage.setItem('kimonoThemeColor', color);
+  }
 </script>
 </html>

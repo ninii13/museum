@@ -127,8 +127,8 @@
 .modal-content {
     background: #fff;
     padding: 2rem;
-    width: 80%;
-    max-width: 600px;
+    width: 50%;
+    /* max-width: 600px; */
     max-height: 80%;
     border-radius: 10px;
     animation: fadeIn .2s;
@@ -137,6 +137,17 @@
     scrollbar-width: thin;
 }
 
+#modalBody {
+    white-space: pre-line;
+}
+#modalTitle {
+    margin-bottom: 1rem;
+    padding: none;
+}
+#modalDate {
+    margin: 1rem auto;
+    padding: none;
+}
 .close-btn {
     float: right;
     font-size: 1.6rem;
