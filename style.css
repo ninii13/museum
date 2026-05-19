@@ -688,10 +688,10 @@ select{
     font-weight: 500;
     letter-spacing: 0.15rem;
 }
-.modern .exhibit-subtitle {
+.timeline .exhibit-subtitle {
     margin-bottom: 20px;
 }
-.modern .exhibit {
+.timeline .exhibit {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -701,10 +701,10 @@ select{
     padding-top: 20px;
     max-width: 100%;
 }
-.modern .exhibit:nth-child(even) {
+.timeline .exhibit:nth-child(even) {
     background: white;
 }
-.modern .exhibit-item {
+.timeline .exhibit-item {
     display: flex;
     flex-direction: row;
     align-items: center; /* 確保圖片與文字頂端對齊 */
@@ -714,14 +714,14 @@ select{
 }
 
 /* 均分空間，並限制三張圖片的區塊最大寬度，留空間給文字 */
-.modern .exhibit-item .exhibit-img {
+.timeline .exhibit-item .exhibit-img {
     flex: 1;
     max-width: 22%; /* 3張大約佔 66% */
     text-align: center; /* 讓圖片下的說明置中 */
 }
 
 /* 確保圖片不爆出容器 */
-.modern .exhibit-item .exhibit-img img {
+.timeline .exhibit-item .exhibit-img img {
     max-width: 100%;
     height: 200px;
     object-fit: cover;
@@ -730,17 +730,17 @@ select{
 }
 
 /* 給予文字區塊適當的佔比，並限制最大寬度防止擠壓 */
-.modern .exhibit-item .exhibit-description {
+.timeline .exhibit-item .exhibit-description {
     flex: 1.2;
     max-width: 28%; /* 文字大約佔 28% */
 }
 
 /* 消除標題預設的上方間距，使其與圖片完美對齊 */
-.modern .exhibit-item .exhibit-description h3 {
+.timeline .exhibit-item .exhibit-description h3 {
     margin-top: 0;
 }
 
-.modern .exhibit-desc .exhibit-title{
+.timeline .exhibit-desc .exhibit-title{
     display:flex;/* 讓這一個時代的容器變成 Flex 盒子 */
 #era-nara {
     display: flex;
