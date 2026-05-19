@@ -688,39 +688,131 @@ select{
     font-weight: 500;
     letter-spacing: 0.15rem;
 }
-.exhibit-subtitle {
+.modern .exhibit-subtitle {
     margin-bottom: 20px;
 }
-.exhibit {
+.modern .exhibit {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin: 0 auto;
+    margin:0 auto;
+    padding-top: 20px;
+    max-width: 100%;
 }
-.exhibit:nth-child(even) {
+.modern .exhibit:nth-child(even) {
     background: white;
 }
-.exhibit-item {
+.modern .exhibit-item {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; /* 確保圖片與文字頂端對齊 */
     justify-content: center;
-    gap: 20px;
-    max-width: 80%;
+    width: 100%;
+    gap: 5px;
 }
 
-.exhibit-item img {
-    width: auto;
-    height: 300px;
+/* 均分空間，並限制三張圖片的區塊最大寬度，留空間給文字 */
+.modern .exhibit-item .exhibit-img {
+    flex: 1;
+    max-width: 22%; /* 3張大約佔 66% */
+    text-align: center; /* 讓圖片下的說明置中 */
+}
+
+/* 確保圖片不爆出容器 */
+.modern .exhibit-item .exhibit-img img {
+    max-width: 100%;
+    height: 200px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px; /* 選擇性：給圖片一點圓角增添優雅感 */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.exhibit-desc .exhibit-title{
-    display:flex;
+/* 給予文字區塊適當的佔比，並限制最大寬度防止擠壓 */
+.modern .exhibit-item .exhibit-description {
+    flex: 1.2;
+    max-width: 28%; /* 文字大約佔 28% */
+}
+
+/* 消除標題預設的上方間距，使其與圖片完美對齊 */
+.modern .exhibit-item .exhibit-description h3 {
+    margin-top: 0;
+}
+
+.modern .exhibit-desc .exhibit-title{
+    display:flex;/* 讓這一個時代的容器變成 Flex 盒子 */
+#era-nara {
+    display: flex;
+    flex-direction: row;       /* 確保所有元素排在同一行 */
+    justify-content: space-between; /* 關鍵：讓所有元素在行內均勻分散 */
+    align-items: flex-start;   /* 讓圖片與文字頂端對齊，畫面比較整齊 */
+    gap: 20px;                 /* 元素之間的固定最小間距 */
+    width: 100%;               /* 撐滿父容器 */
+    margin-bottom: 50px;       /* 時代與時代之間的距離 */
+    box-sizing: border-box;
+}
+
+/* 每個圖片區塊的寬度控制 */
+#era-nara .exhibit-img {
+    flex: 1;                   /* 讓三張圖片平分剩餘空間 */
+    max-width: 20%;            /* 限制圖片區塊最大約佔 20% 寬度，避免文字空間被壓榨 */
+    text-align: center;        /* 讓圖片下的描述文字置中 */
+}
+
+/* 確保圖片本身不會爆出去 */
+#era-nara .exhibit-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;        /* 選擇性：給圖片一點圓角增添優雅感 */
+}
+
+/* 圖片下方的短說明樣式 */
+.img-desc {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 展覽文字描述區塊的寬度控制 */
+#era-nara .exhibit-description {
+    flex: 1.5;                 /* 給文字稍微大一點的權重 */
+    max-width: 30%;            /* 限制文字最大佔比，維持 4 個區塊的平衡 */
+    text-align: left;          /* 文字靠左對齊，方便閱讀 */
+    padding-left: 10px;
+}
+
+#era-nara .exhibit-description h3 {
+    margin-top: 0;             /* 消除標題預設的上方間距，確保與圖片頂端對齊 */
+    color: var(--color1);       /* 使用你的主題紅 */
+    margin-bottom: 12px;
+}
+
+#era-nara .exhibit-description p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* 📱 RWD 手機版適應：在螢幕太小時如果擠在同一行會變災難，自動改成上下排列 */
+@media (max-width: 992px) {
+    #era-nara {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #era-nara .exhibit-img, 
+    #era-nara .exhibit-description {
+        max-width: 100%;       /* 恢復全寬 */
+        width: 100%;
+    }
+    
+    #era-nara .exhibit-description {
+        margin-top: 20px;
+        padding-left: 0;
+    }
+}
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -730,8 +822,102 @@ select{
 }
 /* -----------------------Zone A Page Style----------------------- */
 /* -----------------------Zone B Page Style----------------------- */
+.jhkimono .exhibit-subtitle {
+    margin-bottom: 20px;
+}
+.jhkimono .exhibit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+     max-width: 100%;
+}
+.jhkimono .exhibit:nth-child(even) {
+    background: white;
+}
+.jhkimono .exhibit-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+}
+
+.jhkimono .exhibit-item img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.jhkimono .exhibit-desc .exhibit-title{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
 /* -----------------------Zone B Page Style----------------------- */
 /* -----------------------Zone C Page Style----------------------- */
+.modern .exhibit-subtitle {
+    margin-bottom: 20px;
+}
+.modern .exhibit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    padding:20px;
+     max-width: 100%;
+}
+.modern .exhibit:nth-child(even) {
+    background: white;
+}
+.modern .exhibit-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+}
+.modern .exhibit-item .exhibit-img {
+    flex: 1;
+    max-width: 22%;
+    text-align: center;
+}
+
+.modern .exhibit-item img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modern .exhibit-desc .exhibit-title{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.modern .exhibit-text {
+    max-width: 80%;
+    text-align: left;
+    padding-left: 20px;
+}
 /* -----------------------Zone C Page Style----------------------- */
 /* -----------------------Zone Navigation Style----------------------- */
 /* floating nav menu */
